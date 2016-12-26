@@ -17,8 +17,6 @@
 		434340F11D7E98B1003E19EB /* RealmComplicationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434340F01D7E98B1003E19EB /* RealmComplicationItem.swift */; };
 		434340F31D7EA380003E19EB /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434340F21D7EA380003E19EB /* DateHelper.swift */; };
 		434340F51D7EBF2B003E19EB /* ComplicationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434340F41D7EBF2B003E19EB /* ComplicationItem.swift */; };
-		434760371D7D501800264DF4 /* Realm.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 43DB09511D780B41009E530F /* Realm.framework */; };
-		434760381D7D501E00264DF4 /* RealmSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 43DB09521D780B41009E530F /* RealmSwift.framework */; };
 		4363B72F1E11434300B68C65 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4363B72D1E11434300B68C65 /* Realm.framework */; };
 		4363B7301E11434300B68C65 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4363B72E1E11434300B68C65 /* RealmSwift.framework */; };
 		4369723B1D76BA240071B0B1 /* ItemRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4369723A1D76BA240071B0B1 /* ItemRowController.swift */; };
@@ -41,6 +39,12 @@
 		436F4DF31D740D49005EFD59 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436F4DF21D740D49005EFD59 /* ComplicationController.swift */; };
 		437A30041D795A8B0002BC58 /* RealmCriticalList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437A30031D795A8B0002BC58 /* RealmCriticalList.swift */; };
 		437A30061D79694A0002BC58 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437A30051D79694A0002BC58 /* RealmHelper.swift */; };
+		437EDFA21E11583200E3ECD2 /* Realm.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4363B72D1E11434300B68C65 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		437EDFA31E11583200E3ECD2 /* RealmSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4363B72E1E11434300B68C65 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		437EDFA51E115EF200E3ECD2 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4363B72D1E11434300B68C65 /* Realm.framework */; };
+		437EDFA61E115EF200E3ECD2 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4363B72D1E11434300B68C65 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		437EDFA71E115EF200E3ECD2 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4363B72E1E11434300B68C65 /* RealmSwift.framework */; };
+		437EDFA81E115EF200E3ECD2 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4363B72E1E11434300B68C65 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		43BA39FD1D76C51400982B61 /* ItemDetailsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BA39FC1D76C51400982B61 /* ItemDetailsInterfaceController.swift */; };
 		43DB09661D7817A6009E530F /* RealmHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 43DB09641D7817A6009E530F /* RealmHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		43DB09691D7817A6009E530F /* RealmHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43DB09621D7817A6009E530F /* RealmHelper.framework */; };
@@ -85,14 +89,14 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		434760361D7D500A00264DF4 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			dstPath = "";
-			dstSubfolderSpec = 16;
+			dstSubfolderSpec = 10;
 			files = (
-				434760371D7D501800264DF4 /* Realm.framework in CopyFiles */,
-				434760381D7D501E00264DF4 /* RealmSwift.framework in CopyFiles */,
+				437EDFA21E11583200E3ECD2 /* Realm.framework in CopyFiles */,
+				437EDFA31E11583200E3ECD2 /* RealmSwift.framework in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 		};
 		436F4DD61D740959005EFD59 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -124,6 +128,18 @@
 			files = (
 				436F4DEB1D740A76005EFD59 /* TokeiModel.framework in Embed Frameworks */,
 				43DB096A1D7817A6009E530F /* RealmHelper.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		437EDFAA1E115EF200E3ECD2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				437EDFA81E115EF200E3ECD2 /* RealmSwift.framework in Embed Frameworks */,
+				437EDFA61E115EF200E3ECD2 /* Realm.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -169,8 +185,6 @@
 		437A30031D795A8B0002BC58 /* RealmCriticalList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmCriticalList.swift; sourceTree = "<group>"; };
 		437A30051D79694A0002BC58 /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		43BA39FC1D76C51400982B61 /* ItemDetailsInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailsInterfaceController.swift; sourceTree = "<group>"; };
-		43DB09511D780B41009E530F /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = /Users/haawa799/Desktop/WaniTokei/Carthage/Build/watchOS/Realm.framework; sourceTree = "<absolute>"; };
-		43DB09521D780B41009E530F /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = /Users/haawa799/Desktop/WaniTokei/Carthage/Build/watchOS/RealmSwift.framework; sourceTree = "<absolute>"; };
 		43DB09621D7817A6009E530F /* RealmHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RealmHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43DB09641D7817A6009E530F /* RealmHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealmHelper.h; sourceTree = "<group>"; };
 		43DB09651D7817A6009E530F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -201,6 +215,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		437EDFA91E115EF200E3ECD2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				437EDFA71E115EF200E3ECD2 /* RealmSwift.framework in Frameworks */,
+				437EDFA51E115EF200E3ECD2 /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,6 +401,8 @@
 			buildPhases = (
 				436F4DB01D740959005EFD59 /* Resources */,
 				436F4DD61D740959005EFD59 /* Embed App Extensions */,
+				437EDFA91E115EF200E3ECD2 /* Frameworks */,
+				437EDFAA1E115EF200E3ECD2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -437,6 +462,7 @@
 				43DB095F1D7817A6009E530F /* Headers */,
 				43DB09601D7817A6009E530F /* Resources */,
 				434760361D7D500A00264DF4 /* CopyFiles */,
+				437EDFA41E115A7200E3ECD2 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -549,6 +575,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		437EDFA41E115A7200E3ECD2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/watchOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/watchOS/Realm.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 		43DB09571D780B56009E530F /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 8;
@@ -815,8 +856,13 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = S55BP53VB8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/watchOS",
+				);
 				IBSC_MODULE = WaniTokei_WatchKit_Extension;
 				INFOPLIST_FILE = "WaniTokei WatchKit App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.haawa.WaniTokei.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -833,8 +879,13 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = S55BP53VB8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/watchOS",
+				);
 				IBSC_MODULE = WaniTokei_WatchKit_Extension;
 				INFOPLIST_FILE = "WaniTokei WatchKit App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.haawa.WaniTokei.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -945,7 +996,7 @@
 				);
 				INFOPLIST_FILE = RealmHelper/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.haawa.RealmHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -978,7 +1029,7 @@
 				);
 				INFOPLIST_FILE = RealmHelper/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.haawa.RealmHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
