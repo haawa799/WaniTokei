@@ -36,7 +36,7 @@ public extension WordInfo {
   }
   
   public init(dict: [String : AnyObject]) {
-    character = dict[WordInfo.keyCharacter] as! String
+    character = (dict[WordInfo.keyCharacter] as? String) ?? ""
     if let meaningString = dict[WordInfo.keyMeaning] as? String {
       let meanings = meaningString.components(separatedBy: ", ")
       var newMeaningstring = meanings.first!
@@ -46,7 +46,7 @@ public extension WordInfo {
       meaning = newMeaningstring
     }
     kana = dict[WordInfo.keyKana] as? String
-    level = dict[WordInfo.keyLevel] as! Int
+    level = (dict[WordInfo.keyLevel] as? Int) ?? 0
     percentage = dict[WordInfo.keyPercentage] as? String
     
     if let userSpecificDict = dict[WordInfo.keyUserSpecific] as? [String : AnyObject] {

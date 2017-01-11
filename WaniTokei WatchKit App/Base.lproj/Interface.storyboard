@@ -1,8 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11198.2" systemVersion="15G1004" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="s60-oc-zEX">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="s60-oc-zEX">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11077"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11508"/>
     </dependencies>
     <scenes>
         <!--Details-->
@@ -111,6 +114,24 @@
                 <controller id="4sK-HA-Art" customClass="NotificationController" customModule="WaniTokei_WatchKit_App" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="175" y="626"/>
+        </scene>
+        <!--ErrorInterfaceController-->
+        <scene sceneID="Wep-X7-Mt3">
+            <objects>
+                <controller identifier="ErrorInterfaceController" id="AYZ-Mr-NiD" customClass="ErrorInterfaceController" customModule="WaniTokei_WatchKit_Extension">
+                    <items>
+                        <group width="1" height="1" alignment="center" id="4b0-XN-Y8P">
+                            <items>
+                                <label alignment="center" verticalAlignment="center" text="Label" textAlignment="center" baselineAdjustment="alignCenters" numberOfLines="2" id="v3W-qo-9cY"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="errorMessageLabel" destination="v3W-qo-9cY" id="6YT-7b-N9g"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="439" y="802"/>
         </scene>
     </scenes>
 </document>

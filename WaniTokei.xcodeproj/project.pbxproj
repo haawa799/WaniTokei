@@ -12,6 +12,13 @@
 		430B0E301D75587B00E465A8 /* WordlInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430B0E2F1D75587B00E465A8 /* WordlInfo.swift */; };
 		430B0E321D755A3F00E465A8 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430B0E311D755A3F00E465A8 /* Item.swift */; };
 		430B0E341D75656200E465A8 /* WaniKaniResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430B0E331D75656200E465A8 /* WaniKaniResponse.swift */; };
+		433049E11E250F4100A0ED4B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433049E01E250F4100A0ED4B /* ViewController.swift */; };
+		433049EC1E25122C00A0ED4B /* Cely.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 433049E91E25122C00A0ED4B /* Cely.framework */; };
+		433049ED1E25122C00A0ED4B /* Cely.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 433049E91E25122C00A0ED4B /* Cely.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		433049EE1E25122C00A0ED4B /* Locksmith.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 433049EA1E25122C00A0ED4B /* Locksmith.framework */; };
+		433049EF1E25122C00A0ED4B /* Locksmith.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 433049EA1E25122C00A0ED4B /* Locksmith.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		433049F01E25122C00A0ED4B /* WaniLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 433049EB1E25122C00A0ED4B /* WaniLoginKit.framework */; };
+		433049F11E25122C00A0ED4B /* WaniLoginKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 433049EB1E25122C00A0ED4B /* WaniLoginKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		434340ED1D7E9032003E19EB /* PersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434340EC1D7E9032003E19EB /* PersistanceManager.swift */; };
 		434340EF1D7E92CC003E19EB /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434340EE1D7E92CC003E19EB /* NetworkingManager.swift */; };
 		434340F11D7E98B1003E19EB /* RealmComplicationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434340F01D7E98B1003E19EB /* RealmComplicationItem.swift */; };
@@ -45,6 +52,7 @@
 		437EDFA61E115EF200E3ECD2 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4363B72D1E11434300B68C65 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		437EDFA71E115EF200E3ECD2 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4363B72E1E11434300B68C65 /* RealmSwift.framework */; };
 		437EDFA81E115EF200E3ECD2 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4363B72E1E11434300B68C65 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		439758461E268A50008AE69B /* ErrorInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439758451E268A50008AE69B /* ErrorInterfaceController.swift */; };
 		43BA39FD1D76C51400982B61 /* ItemDetailsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BA39FC1D76C51400982B61 /* ItemDetailsInterfaceController.swift */; };
 		43DB09661D7817A6009E530F /* RealmHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 43DB09641D7817A6009E530F /* RealmHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		43DB09691D7817A6009E530F /* RealmHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43DB09621D7817A6009E530F /* RealmHelper.framework */; };
@@ -87,6 +95,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		433049F21E25122C00A0ED4B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				433049F11E25122C00A0ED4B /* WaniLoginKit.framework in Embed Frameworks */,
+				433049ED1E25122C00A0ED4B /* Cely.framework in Embed Frameworks */,
+				433049EF1E25122C00A0ED4B /* Locksmith.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		434760361D7D500A00264DF4 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 8;
@@ -152,6 +173,15 @@
 		430B0E2F1D75587B00E465A8 /* WordlInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordlInfo.swift; path = "../WaniTokei WatchKit Extension/WordlInfo.swift"; sourceTree = "<group>"; };
 		430B0E311D755A3F00E465A8 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Item.swift; path = "../WaniTokei WatchKit Extension/Item.swift"; sourceTree = "<group>"; };
 		430B0E331D75656200E465A8 /* WaniKaniResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaniKaniResponse.swift; sourceTree = "<group>"; };
+		433049DF1E250EE900A0ED4B /* WaniTokei WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "WaniTokei WatchKit App.entitlements"; sourceTree = "<group>"; };
+		433049E01E250F4100A0ED4B /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		433049E21E2511B500A0ED4B /* WaniTokei.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WaniTokei.entitlements; sourceTree = "<group>"; };
+		433049E31E25121A00A0ED4B /* Cely.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cely.framework; path = Carthage/Build/iOS/Cely.framework; sourceTree = "<group>"; };
+		433049E41E25121A00A0ED4B /* Locksmith.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Locksmith.framework; path = Carthage/Build/iOS/Locksmith.framework; sourceTree = "<group>"; };
+		433049E51E25121A00A0ED4B /* WaniLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WaniLoginKit.framework; path = Carthage/Build/iOS/WaniLoginKit.framework; sourceTree = "<group>"; };
+		433049E91E25122C00A0ED4B /* Cely.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cely.framework; path = Carthage/Build/iOS/Cely.framework; sourceTree = "<group>"; };
+		433049EA1E25122C00A0ED4B /* Locksmith.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Locksmith.framework; path = Carthage/Build/iOS/Locksmith.framework; sourceTree = "<group>"; };
+		433049EB1E25122C00A0ED4B /* WaniLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WaniLoginKit.framework; path = Carthage/Build/iOS/WaniLoginKit.framework; sourceTree = "<group>"; };
 		434340EC1D7E9032003E19EB /* PersistanceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistanceManager.swift; sourceTree = "<group>"; };
 		434340EE1D7E92CC003E19EB /* NetworkingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		434340F01D7E98B1003E19EB /* RealmComplicationItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmComplicationItem.swift; sourceTree = "<group>"; };
@@ -184,6 +214,7 @@
 		436F4DF21D740D49005EFD59 /* ComplicationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		437A30031D795A8B0002BC58 /* RealmCriticalList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmCriticalList.swift; sourceTree = "<group>"; };
 		437A30051D79694A0002BC58 /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
+		439758451E268A50008AE69B /* ErrorInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorInterfaceController.swift; sourceTree = "<group>"; };
 		43BA39FC1D76C51400982B61 /* ItemDetailsInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailsInterfaceController.swift; sourceTree = "<group>"; };
 		43DB09621D7817A6009E530F /* RealmHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RealmHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43DB09641D7817A6009E530F /* RealmHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealmHelper.h; sourceTree = "<group>"; };
@@ -199,6 +230,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				433049F01E25122C00A0ED4B /* WaniLoginKit.framework in Frameworks */,
+				433049EC1E25122C00A0ED4B /* Cely.framework in Frameworks */,
+				433049EE1E25122C00A0ED4B /* Locksmith.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +276,9 @@
 		4363B7241E11250C00B68C65 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				433049E31E25121A00A0ED4B /* Cely.framework */,
+				433049E41E25121A00A0ED4B /* Locksmith.framework */,
+				433049E51E25121A00A0ED4B /* WaniLoginKit.framework */,
 				4363B72D1E11434300B68C65 /* Realm.framework */,
 				4363B72E1E11434300B68C65 /* RealmSwift.framework */,
 			);
@@ -251,6 +288,9 @@
 		436F4D971D740959005EFD59 = {
 			isa = PBXGroup;
 			children = (
+				433049E91E25122C00A0ED4B /* Cely.framework */,
+				433049EA1E25122C00A0ED4B /* Locksmith.framework */,
+				433049EB1E25122C00A0ED4B /* WaniLoginKit.framework */,
 				436F4DA21D740959005EFD59 /* WaniTokei */,
 				436F4DB61D740959005EFD59 /* WaniTokei WatchKit App */,
 				436F4DC51D740959005EFD59 /* WaniTokei WatchKit Extension */,
@@ -276,7 +316,9 @@
 		436F4DA21D740959005EFD59 /* WaniTokei */ = {
 			isa = PBXGroup;
 			children = (
+				433049E21E2511B500A0ED4B /* WaniTokei.entitlements */,
 				436F4DA31D740959005EFD59 /* AppDelegate.swift */,
+				433049E01E250F4100A0ED4B /* ViewController.swift */,
 				436F4DA71D740959005EFD59 /* Main.storyboard */,
 				436F4DAA1D740959005EFD59 /* Assets.xcassets */,
 				436F4DAC1D740959005EFD59 /* LaunchScreen.storyboard */,
@@ -288,6 +330,7 @@
 		436F4DB61D740959005EFD59 /* WaniTokei WatchKit App */ = {
 			isa = PBXGroup;
 			children = (
+				433049DF1E250EE900A0ED4B /* WaniTokei WatchKit App.entitlements */,
 				436F4DB71D740959005EFD59 /* Interface.storyboard */,
 				436F4DBA1D740959005EFD59 /* Assets.xcassets */,
 				436F4DBC1D740959005EFD59 /* Info.plist */,
@@ -299,6 +342,7 @@
 			isa = PBXGroup;
 			children = (
 				436F4DC81D740959005EFD59 /* CriticalItemsInterfaceController.swift */,
+				439758451E268A50008AE69B /* ErrorInterfaceController.swift */,
 				43BA39FC1D76C51400982B61 /* ItemDetailsInterfaceController.swift */,
 				436F4DCA1D740959005EFD59 /* ExtensionDelegate.swift */,
 				436F4DCC1D740959005EFD59 /* NotificationController.swift */,
@@ -384,6 +428,8 @@
 				436F4D9D1D740959005EFD59 /* Frameworks */,
 				436F4D9E1D740959005EFD59 /* Resources */,
 				436F4DDA1D740959005EFD59 /* Embed Watch Content */,
+				433049F21E25122C00A0ED4B /* Embed Frameworks */,
+				439758441E267A50008AE69B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -486,10 +532,20 @@
 					436F4D9F1D740959005EFD59 = {
 						CreatedOnToolsVersion = 8.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 					436F4DB11D740959005EFD59 = {
 						CreatedOnToolsVersion = 8.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 					436F4DC01D740959005EFD59 = {
 						CreatedOnToolsVersion = 8.0;
@@ -590,6 +646,19 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
+		439758441E267A50008AE69B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
 		43DB09571D780B56009E530F /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 8;
@@ -612,6 +681,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				433049E11E250F4100A0ED4B /* ViewController.swift in Sources */,
 				436F4DA41D740959005EFD59 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -622,6 +692,7 @@
 			files = (
 				436F4DCD1D740959005EFD59 /* NotificationController.swift in Sources */,
 				436F4DF31D740D49005EFD59 /* ComplicationController.swift in Sources */,
+				439758461E268A50008AE69B /* ErrorInterfaceController.swift in Sources */,
 				4369723B1D76BA240071B0B1 /* ItemRowController.swift in Sources */,
 				43BA39FD1D76C51400982B61 /* ItemDetailsInterfaceController.swift in Sources */,
 				436F4DCB1D740959005EFD59 /* ExtensionDelegate.swift in Sources */,
@@ -901,6 +972,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = S55BP53VB8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = WaniTokei/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.haawa.WaniTokei;
@@ -914,6 +989,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = S55BP53VB8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = WaniTokei/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.haawa.WaniTokei;

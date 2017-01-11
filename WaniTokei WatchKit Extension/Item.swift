@@ -18,8 +18,6 @@ public enum Item {
     static let percentage = "percentage"
   }
   
-  
-  
   case kanji(KanjiInfo)
   case word(WordInfo)
   case radical(RadicalInfo)

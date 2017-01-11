@@ -15,5 +15,3 @@ class ItemRowController: NSObject {
   @IBOutlet var backgroundGroup: WKInterfaceGroup!
   
 }
-
-

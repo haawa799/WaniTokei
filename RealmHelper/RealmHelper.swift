@@ -13,6 +13,7 @@ import TokeiModel
 public struct RealmHelper {
   
   var realm: Realm {
+    // swiftlint:disable:next force_try
     return try! Realm()
   }
   let realmQueue = DispatchQueue(label: "RealmQueue")
@@ -20,22 +21,22 @@ public struct RealmHelper {
   public init() {
   }
   
-  public func fetchRealmCriticalItems(handler: @escaping (RealmReviewItemsList)->()) {
+  public func fetchRealmCriticalItems(handler: @escaping (RealmReviewItemsList) -> Void) {
     realmQueue.async {
       let criticalItems = self.createListIfDoesntExist()
       handler(criticalItems)
     }
   }
   
-  public func fetchComplicationItems(handler: @escaping ([ComplicationItem])->()) {
+  public func fetchComplicationItems(handler: @escaping ([ComplicationItem]) -> Void) {
     realmQueue.async {
-      let items = self.realm.objects(RealmComplicationItem.self).sorted(byProperty: "date")
+      let items = self.realm.objects(RealmComplicationItem.self).sorted(byKeyPath: "date")
       let array = Array(items).map({ $0.item })
       handler(array)
     }
   }
   
-  public func currentComplicationItem(handler: @escaping (ComplicationItem?)->()) {
+  public func currentComplicationItem(handler: @escaping (ComplicationItem?) -> Void) {
     realmQueue.async {
       let predicate = NSPredicate(format: "date < %@", NSDate())
       let results = self.realm.objects(RealmComplicationItem.self).filter(predicate)
@@ -47,19 +48,19 @@ public struct RealmHelper {
     }
   }
   
-  public func pastItems(date: NSDate, handler: @escaping ([ComplicationItem])->()) {
+  public func pastItems(date: NSDate, handler: @escaping ([ComplicationItem]) -> Void) {
     realmQueue.async {
       let predicate = NSPredicate(format: "date < %@", date)
-      let results = self.realm.objects(RealmComplicationItem.self).filter(predicate).sorted(byProperty: "date")
+      let results = self.realm.objects(RealmComplicationItem.self).filter(predicate).sorted(byKeyPath: "date")
       let res = Array(results).map({ $0.item })
       handler(res)
     }
   }
   
-  public func futureItems(date: NSDate, limit: Int, handler: @escaping ([ComplicationItem])->()) {
+  public func futureItems(date: NSDate, limit: Int, handler: @escaping ([ComplicationItem]) -> Void) {
     realmQueue.async {
       let predicate = NSPredicate(format: "date > %@", date)
-      let results = self.realm.objects(RealmComplicationItem.self).filter(predicate).sorted(byProperty: "date")
+      let results = self.realm.objects(RealmComplicationItem.self).filter(predicate).sorted(byKeyPath: "date")
       let limitedResults = results.prefix(limit)
       let res = Array(limitedResults).map({ $0.item })
       handler(res)
@@ -74,14 +75,14 @@ public struct RealmHelper {
     } else {
       // Create list
       criticalItems = RealmReviewItemsList()
-      try! realm.write {
+      try? realm.write {
         realm.add(criticalItems)
       }
     }
     return criticalItems
   }
   
-  public func saveCriticalItemsToRealm(list: [Item], completion: @escaping ()->()) {
+  public func saveCriticalItemsToRealm(list: [Item], completion: @escaping () -> Void) {
     realmQueue.async {
       let criticalItems = self.createListIfDoesntExist()
       self.realm.beginWrite()
@@ -90,22 +91,22 @@ public struct RealmHelper {
       self.realm.delete(self.realm.objects(RealmWord.self))
       self.realm.delete(self.realm.objects(RealmReviewItem.self))
       criticalItems.populateWithNewItems(items: list)
-      try! self.realm.commitWrite()
+      try? self.realm.commitWrite()
       completion()
     }
   }
   
-  public func saveComplicationItems(list: [RealmComplicationItem], completion: @escaping ()->()) {
+  public func saveComplicationItems(list: [RealmComplicationItem], completion: @escaping () -> Void) {
     realmQueue.async {
       self.realm.beginWrite()
       self.realm.delete(self.realm.objects(RealmComplicationItem.self))
       self.realm.add(list)
-      try! self.realm.commitWrite()
+      try? self.realm.commitWrite()
       completion()
     }
   }
   
-  public func fetchItemForComplication(complication: ComplicationItem, handler: @escaping (Item?)->()) {
+  public func fetchItemForComplication(complication: ComplicationItem, handler: @escaping (Item?) -> Void) {
     realmQueue.async {
       let results = self.realm.objects(RealmReviewItem.self).filter("text = '\(complication.text)' AND type = \(complication.type)")
       handler(results.first?.item)

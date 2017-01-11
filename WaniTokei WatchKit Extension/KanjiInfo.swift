@@ -29,7 +29,6 @@ public struct UserSpecific {
   private static let keyUserSynonyms = "user_synonyms"
   private static let keyReadingNote = "reading_note"
   
-  
   // Fields
   public var srs: String?
   public var srsNumeric: Int?
@@ -57,7 +56,7 @@ public struct UserSpecific {
     
     srs = (dict[UserSpecific.keySrs] as? String)
     srsNumeric = (dict[UserSpecific.keySrsNumeric] as? Int)
-    burned = (dict[UserSpecific.keyBurned] as! Bool)
+    burned = (dict[UserSpecific.keyBurned] as? Bool) ?? false
     
     if let unlock = dict[UserSpecific.keyUnlockDate] as? Int {
       unlockedDate = Date(timeIntervalSince1970: TimeInterval(unlock))
@@ -127,7 +126,7 @@ public extension KanjiInfo {
   }
   
   public init(dict: [String : AnyObject]) {
-    character = dict[KanjiInfo.keyCharacter] as! String
+    character = (dict[KanjiInfo.keyCharacter] as? String) ?? ""
     if let meaningString = dict[WordInfo.keyMeaning] as? String {
       let meanings = meaningString.components(separatedBy: ", ")
       var newMeaningstring = meanings.first!
@@ -140,7 +139,7 @@ public extension KanjiInfo {
     kunyomi = dict[KanjiInfo.keyKunyomi] as? String
     nanori = dict[KanjiInfo.keyNanori] as? String
     importantReading = dict[KanjiInfo.keyImportantReading] as? String
-    level = dict[KanjiInfo.keyLevel] as! Int
+    level = (dict[KanjiInfo.keyLevel] as? Int) ?? 0
     percentage = dict[KanjiInfo.keyPercentage] as? String
     
     if let userSpecificDict = dict[KanjiInfo.keyUserSpecific] as? [String : AnyObject] {

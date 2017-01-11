@@ -27,8 +27,7 @@ public struct WaniKaniResponse {
     guard let dictionary = dict else { return nil }
     guard let requested = dictionary[DictKeys.requestedInfo] else { return nil }
     
-    
-    if let array = requested as? Array<[String : AnyObject]> {
+    if let array = requested as? [[String : AnyObject]] {
       let items = array.flatMap({ Item(dictionary: $0) })
       requestedInfo = RequestedInfo.list(items)
       return

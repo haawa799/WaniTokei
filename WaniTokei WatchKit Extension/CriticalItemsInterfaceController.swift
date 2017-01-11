@@ -10,16 +10,11 @@ import WatchKit
 import Foundation
 import TokeiModel
 
-
 class CriticalItemsInterfaceController: WKInterfaceController {
-  
-  private struct Constants {
-    static let apiKey = "🙂🙂🙂"
-  }
   
   @IBOutlet var tableView: WKInterfaceTable!
   let persistenceManager = PersistanceManager.sharedInstance
-  let networkManager = NetworkingManager(apiKey: Constants.apiKey)
+  let networkManager = NetworkingManager()
   
   var items: [Item]? {
     didSet {
@@ -37,7 +32,6 @@ class CriticalItemsInterfaceController: WKInterfaceController {
     }
   }
   
-  
   func loadItemsFromPersistence() {
     persistenceManager.loadItemsFromPersistence { (items) in
       self.items = items
@@ -45,12 +39,19 @@ class CriticalItemsInterfaceController: WKInterfaceController {
   }
   
   func fetchCriticalList() {
-    networkManager.sendRequest { (items) in
+    let success = networkManager.sendRequest { (items) in
       guard let items = items else { return }
       self.persistenceManager.saveItemsToPersistence(items: items, completion: {
         self.loadItemsFromPersistence()
       })
     }
+    if success == false {
+      showError(message: "You need to log in on the iPhone first.")
+    }
+  }
+  
+  private func showError(message: String) {
+    presentController(withName: "ErrorInterfaceController", context: ["message": message])
   }
   
   override func handleUserActivity(_ userInfo: [AnyHashable : Any]?) {

@@ -37,7 +37,7 @@ public extension RadicalInfo {
   public init(dict: [String : AnyObject]) {
     character = dict[RadicalInfo.keyCharacter] as? String
     image = dict[RadicalInfo.keyImage] as? String
-    level = dict[RadicalInfo.keyLevel] as! Int
+    level = (dict[RadicalInfo.keyLevel] as? Int) ?? 0
     percentage = dict[RadicalInfo.keyPercentage] as? String
     if let meaningString = dict[WordInfo.keyMeaning] as? String {
       let meanings = meaningString.components(separatedBy: ", ")

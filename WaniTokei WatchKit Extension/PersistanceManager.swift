@@ -12,7 +12,7 @@ import TokeiModel
 
 class PersistanceManager {
   
-  static let sharedInstance : PersistanceManager = {
+  static let sharedInstance: PersistanceManager = {
     let instance = PersistanceManager()
     return instance
   }()
@@ -20,7 +20,7 @@ class PersistanceManager {
   private let realmHelper = RealmHelper()
   
   /// Returns [Item] array to main thread from persistant storage
-  func loadItemsFromPersistence(handler: @escaping ([Item])->()) {
+  func loadItemsFromPersistence(handler: @escaping ([Item]) -> Void) {
     realmHelper.fetchRealmCriticalItems { (list) in
       let convertedItems = list.convertedItems()
       DispatchQueue.main.async {
@@ -30,7 +30,7 @@ class PersistanceManager {
   }
   
   /// Returns complication items array to main thread from persistant storage
-  func loadComplicationItemsFromPersistence(handler: @escaping ([ComplicationItem])->()) {
+  func loadComplicationItemsFromPersistence(handler: @escaping ([ComplicationItem]) -> Void) {
     realmHelper.fetchComplicationItems { (list) in
       DispatchQueue.main.async {
         handler(list)
@@ -38,7 +38,7 @@ class PersistanceManager {
     }
   }
   
-  func saveItemsToPersistence(items: [Item], completion: @escaping ()->()) {
+  func saveItemsToPersistence(items: [Item], completion: @escaping () -> Void) {
     realmHelper.saveCriticalItemsToRealm(list: items, completion: completion)
     saveItemsForComplications(items: items, completion: {
       guard let complications = CLKComplicationServer.sharedInstance().activeComplications else { return }
@@ -48,10 +48,10 @@ class PersistanceManager {
     })
   }
   
-  private func saveItemsForComplications(items: [Item], completion: @escaping ()->()) {
+  private func saveItemsForComplications(items: [Item], completion: @escaping () -> Void) {
     
     // All logic here. Plans for future: allow user to customize following numbers
-    let topTen = items.prefix(50)
+    let topTen = items.prefix(20)
     
     let numberOfDays = 20  // For how many days in the future you want to create events for
     let start = 8 // We assume user wakes up at this hour
@@ -89,7 +89,7 @@ class PersistanceManager {
     
   }
   
-  public func currentComplicationItem(handler: @escaping (ComplicationItem?)->()) {
+  public func currentComplicationItem(handler: @escaping (ComplicationItem?) -> Void) {
     realmHelper.currentComplicationItem { (item) in
       DispatchQueue.main.async {
         handler(item)
@@ -97,7 +97,7 @@ class PersistanceManager {
     }
   }
   
-  public func pastItems(countDate: NSDate, handler: @escaping ([ComplicationItem])->()) {
+  public func pastItems(countDate: NSDate, handler: @escaping ([ComplicationItem]) -> Void) {
     realmHelper.pastItems(date: countDate) { (items) in
       DispatchQueue.main.async {
         handler(items)
@@ -105,7 +105,7 @@ class PersistanceManager {
     }
   }
   
-  public func futureItems(date: NSDate, limit: Int, handler: @escaping ([ComplicationItem])->()) {
+  public func futureItems(date: NSDate, limit: Int, handler: @escaping ([ComplicationItem]) -> Void) {
     realmHelper.futureItems(date: date, limit: limit) { (items) in
       DispatchQueue.main.async {
         handler(items)
@@ -113,7 +113,7 @@ class PersistanceManager {
     }
   }
   
-  public func fetchItemForComplication(complication: ComplicationItem, handler: @escaping (Item?)->()) {
+  public func fetchItemForComplication(complication: ComplicationItem, handler: @escaping (Item?) -> Void) {
     realmHelper.fetchItemForComplication(complication: complication) { (item) in
       DispatchQueue.main.async {
         handler(item)
