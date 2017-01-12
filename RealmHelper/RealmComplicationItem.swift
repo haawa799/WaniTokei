@@ -39,7 +39,7 @@ public class RealmComplicationItem: Object {
   }
   
   public var item: ComplicationItem {
-    let item = ComplicationItem(text: text, subText: subText, date: date, color: itemType.color, type: type)
+    let item = ComplicationItem(text: self.text, subText: subText, date: date, color: itemType.color, type: type)
     return item
   }
   

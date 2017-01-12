@@ -15,23 +15,23 @@
                     <items>
                         <group width="1" height="1" alignment="left" layout="vertical" id="k75-DD-pz7">
                             <items>
-                                <group width="1" alignment="left" layout="vertical" id="UEJ-Wh-FlK">
+                                <group width="1" height="0.29999999999999999" alignment="left" layout="vertical" id="UEJ-Wh-FlK">
                                     <items>
-                                        <label width="1" height="45" alignment="left" text="火" textAlignment="center" minimumScaleFactor="0.29999999999999999" id="7cN-gV-pax">
+                                        <label width="1" height="45" alignment="left" textAlignment="center" minimumScaleFactor="0.29999999999999999" id="7cN-gV-pax">
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="font" type="system" weight="black" pointSize="41"/>
                                         </label>
-                                        <label width="136" height="29" alignment="left" text="--------------" textAlignment="center" minimumScaleFactor="0.5" id="OU2-wK-NVc">
+                                    </items>
+                                </group>
+                                <group width="0.94999999999999996" height="0.69999999999999996" alignment="center" layout="vertical" id="BOl-Ls-WaJ">
+                                    <items>
+                                        <label width="1" alignment="center" textAlignment="center" numberOfLines="2" minimumScaleFactor="0.5" id="OU2-wK-NVc">
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="font" type="boldSystem" pointSize="20"/>
                                         </label>
-                                    </items>
-                                </group>
-                                <group width="1" alignment="left" id="BOl-Ls-WaJ">
-                                    <items>
-                                        <label width="1" height="55" alignment="left" text="つく" textAlignment="center" numberOfLines="5" minimumScaleFactor="0.59999999999999998" id="ZcD-ow-VoK">
+                                        <label width="1" height="0.5" alignment="left" textAlignment="center" numberOfLines="2" minimumScaleFactor="0.40000000000000002" id="ZcD-ow-VoK">
                                             <color key="textColor" red="0.53855812549591064" green="0.90692335367202759" blue="0.7053493857383728" alpha="1" colorSpace="calibratedRGB"/>
-                                            <fontDescription key="font" type="system" weight="light" pointSize="21"/>
+                                            <fontDescription key="font" type="system" pointSize="19"/>
                                         </label>
                                     </items>
                                 </group>
@@ -57,7 +57,7 @@
                                 <tableRow identifier="itemCell" id="wSK-rw-hur" customClass="ItemRowController" customModule="WaniTokei_WatchKit_Extension">
                                     <group key="rootItem" width="1" alignment="left" id="q2B-rc-mKE">
                                         <items>
-                                            <label width="82" alignment="left" verticalAlignment="center" text="---------" textAlignment="justified" minimumScaleFactor="0.5" id="bB8-Zl-pTY">
+                                            <label width="82" alignment="left" verticalAlignment="center" textAlignment="justified" minimumScaleFactor="0.5" id="bB8-Zl-pTY">
                                                 <fontDescription key="font" type="system" weight="heavy" pointSize="25"/>
                                             </label>
                                             <label alignment="right" verticalAlignment="center" id="dev-78-aKE">
