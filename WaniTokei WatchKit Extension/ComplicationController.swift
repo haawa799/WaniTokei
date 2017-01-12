@@ -61,15 +61,16 @@ public class ComplicationController: NSObject, CLKComplicationDataSource {
 
 extension ComplicationItem {
   
-  static func complicationTemplateForText(text: String, family: CLKComplicationFamily) -> CLKComplicationTemplate {
+  static func complicationTemplateForText(text: String, subtext: String?, family: CLKComplicationFamily) -> CLKComplicationTemplate {
     switch family {
     case .modularSmall:
       let template = CLKComplicationTemplateModularSmallSimpleText()
       template.textProvider = CLKSimpleTextProvider(text: text)
       return template
     case .modularLarge:
+      let subText = subtext ?? ""
       let template = CLKComplicationTemplateModularLargeTallBody()
-      template.headerTextProvider = CLKSimpleTextProvider(text: "")
+      template.headerTextProvider = CLKSimpleTextProvider(text: subText)
       template.bodyTextProvider = CLKSimpleTextProvider(text: text)
       return template
     case .utilitarianSmall:
@@ -96,7 +97,7 @@ extension ComplicationItem {
   }
   
   func complicationTemplateForFamily(family: CLKComplicationFamily) -> CLKComplicationTemplate {
-    let template = ComplicationItem.complicationTemplateForText(text: text, family: family)
+    let template = ComplicationItem.complicationTemplateForText(text: text, subtext: subText, family: family)
     template.tintColor = color
     return template
   }

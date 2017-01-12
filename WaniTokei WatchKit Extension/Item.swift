@@ -47,6 +47,14 @@ public enum Item {
     }
   }
   
+  public var typeDescription: String {
+    switch self {
+    case .radical(_): return "radical"
+    case .kanji(_): return "kanji"
+    case .word(_): return "word"
+    }
+  }
+  
   public var percentage: String? {
     switch self {
     case .radical(let radical): return radical.percentage

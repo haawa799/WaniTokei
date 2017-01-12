@@ -11,14 +11,14 @@ import Foundation
 public struct ComplicationItem {
   
   public var text: String
-  public var shortText: String?
+  public var subText: String?
   public var date: Date
   public var color: UIColor
   public var type: Int
   
-  public init(text: String, shortText: String?, date: Date, color: UIColor, type: Int) {
+  public init(text: String, subText: String?, date: Date, color: UIColor, type: Int) {
     self.text = text
-    self.shortText = shortText
+    self.subText = subText
     self.date = date
     self.color = color
     self.type = type

@@ -19,6 +19,10 @@ public struct RealmHelper {
   let realmQueue = DispatchQueue(label: "RealmQueue")
   
   public init() {
+    Realm.Configuration.defaultConfiguration = Realm.Configuration(
+      schemaVersion: 2,
+      migrationBlock: { _, _ in
+    })
   }
   
   public func fetchRealmCriticalItems(handler: @escaping (RealmReviewItemsList) -> Void) {
