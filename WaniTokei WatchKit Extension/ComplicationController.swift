@@ -57,6 +57,12 @@ public class ComplicationController: NSObject, CLKComplicationDataSource {
     handler(.showOnLockScreen)
   }
   
+  public func getLocalizableSampleTemplate(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTemplate?) -> Swift.Void) {
+    let complicationItem = ComplicationItem(text: "時計", subText: "word", date: Date(), color: UIColor(red:0.60, green:0.22, blue:0.69, alpha:1.00), type: 2)
+    let template = complicationItem.complicationTemplateForFamily(family: complication.family)
+    handler(template)
+  }
+  
 }
 
 extension ComplicationItem {
