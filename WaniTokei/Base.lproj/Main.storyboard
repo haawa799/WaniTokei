@@ -1,14 +1,17 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WaniTokei" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +19,53 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bga-pZ-syD">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Sync with ⌚️" id="txy-Ye-ft7">
+                                        <connections>
+                                            <action selector="syncAction:" destination="BYZ-38-t0r" id="2PI-1n-brA"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O6G-00-h2y">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJ0-jw-Afo">
+                                        <rect key="frame" x="15" y="301" width="345" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="YJ0-jw-Afo" secondAttribute="trailing" constant="15" id="CSo-dJ-x3r"/>
+                                    <constraint firstItem="YJ0-jw-Afo" firstAttribute="leading" secondItem="O6G-00-h2y" secondAttribute="leading" constant="15" id="deK-pT-AWg"/>
+                                    <constraint firstItem="YJ0-jw-Afo" firstAttribute="centerY" secondItem="O6G-00-h2y" secondAttribute="centerY" id="fBX-eL-h5A"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="O6G-00-h2y" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="56K-8W-iue"/>
+                            <constraint firstItem="Bga-pZ-syD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Bcb-e0-t6K"/>
+                            <constraint firstItem="O6G-00-h2y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DcD-SG-duH"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Bga-pZ-syD" secondAttribute="bottom" id="Flq-td-tSr"/>
+                            <constraint firstItem="Bga-pZ-syD" firstAttribute="top" secondItem="O6G-00-h2y" secondAttribute="bottom" id="Gfq-c2-WlZ"/>
+                            <constraint firstAttribute="trailing" secondItem="Bga-pZ-syD" secondAttribute="trailing" id="SDJ-nh-ycC"/>
+                            <constraint firstAttribute="trailing" secondItem="O6G-00-h2y" secondAttribute="trailing" id="ckq-5O-exS"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="statusLabel" destination="YJ0-jw-Afo" id="Mut-sg-I74"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="140" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>

@@ -18,12 +18,14 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
   }
   
   func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+    
   }
   
-  func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+  func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
     let key = "apiKey"
     guard let apiKey = message[key] else { return }
     UserDefaults.standard.setValue(apiKey, forKey: key)
+    replyHandler([:])
   }
   
 }
