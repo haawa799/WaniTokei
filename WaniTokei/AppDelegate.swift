@@ -49,14 +49,3 @@ extension AppDelegate: WCSessionDelegate {
   }
   
 }
-
-//extension AppDelegate: WaniLoginCoordinatorDelegate {
-//  
-//  func loginEndedWithResult(result: LoginResult, coordinator: WaniLoginCoordinator) {
-//    switch result {
-//    case .success(let apiKey): sendApiKey(apiKey: apiKey)
-//    default: return
-//    }
-//  }
-//  
-//}
